@@ -4,6 +4,21 @@ import ProductRow from "./ProductRow";
 
 class ProductTable extends Component {
     render() {
+        const rows = [];
+        let category = null;
+        this.props.products.forEach((product) => {
+            if(category == null || product.category !== category) {
+                category = product.category;
+                rows.push(
+                    <ProductCategoryRow title={category}/>
+                );
+            }
+
+            rows.push(
+                <ProductRow productName={product.name} price={product.price} stocked={product.stocked}/>
+            )
+        });
+
         return (
             <div id="product-table">
                 <table>
@@ -12,12 +27,7 @@ class ProductTable extends Component {
                     <th>Price</th>
                     </thead>
                     <tbody>
-                    <ProductCategoryRow title="Sporting Goods"/>
-                    <ProductRow productName="Football" price="49.99" stocked={true}/>
-
-                    <ProductCategoryRow title="Electronics"/>
-                    <ProductRow productName="iPod Touch" price="29.99" stocked={true}/>
-                    <ProductRow productName="iPhone 5" price="349.99" stocked={false}/>
+                    {rows}
                     </tbody>
                 </table>
             </div>

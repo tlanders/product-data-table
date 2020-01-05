@@ -7,7 +7,7 @@ class FilterableProductTable extends Component {
         return (
             <div id="filterable-table">
                 <SearchBar/>
-                <ProductTable/>
+                <ProductTable products={this.props.products}/>
             </div>
         );
     }
