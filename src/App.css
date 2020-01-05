@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+#search {
+  text-align: left;
+}
+
+#product-table {
+  text-align: left;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
