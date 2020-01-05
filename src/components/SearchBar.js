@@ -5,8 +5,10 @@ class SearchBar extends Component {
         return (
             <div>
                 <form id="search-bar" name="search-bar">
-                    <input type="text" value="" name="searchText"/><br/>
+                    <p>
+                    <input type="text" value="" name="searchText" placeholder="Search..."/><br/>
                     <input type="checkbox" name="inStockOnly"/> Only show products in stock
+                    </p>
                 </form>
             </div>
         );
