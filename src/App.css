@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-#search {
+#search-bar {
   text-align: left;
 }
 
@@ -13,6 +13,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.not-stocked {
+  color: red;
 }
 
 @media (prefers-reduced-motion: no-preference) {
