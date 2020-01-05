@@ -12,16 +12,12 @@ class ProductTable extends Component {
                     <th>Price</th>
                     </thead>
                     <tbody>
-                    <ProductCategoryRow/>
-                    <ProductRow/>
+                    <ProductCategoryRow title="Sporting Goods"/>
+                    <ProductRow productName="Football" price="49.99" stocked={true}/>
 
-                    <ProductCategoryRow/>
-                    <ProductRow/>
-                    <ProductRow/>
-                    <tr>
-                        <td className="not-stocked">iPhone 5</td>
-                        <td>$49.99</td>
-                    </tr>
+                    <ProductCategoryRow title="Electronics"/>
+                    <ProductRow productName="iPod Touch" price="29.99" stocked={true}/>
+                    <ProductRow productName="iPhone 5" price="349.99" stocked={false}/>
                     </tbody>
                 </table>
             </div>

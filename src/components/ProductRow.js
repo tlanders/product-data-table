@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ProductRow = () => {
+const ProductRow = (props) => {
     return (
         <tr>
-            <td>Football</td>
-            <td>$49.99</td>
+            <td class={props.stocked ? 'stocked' : 'not-stocked'}>{props.productName}</td>
+            <td>${props.price}</td>
         </tr>
     );
 };
