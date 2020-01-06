@@ -7,7 +7,7 @@ class ProductTable extends Component {
         const rows = [];
         let category = null;
         this.props.products.forEach((product) => {
-            if((this.props.filterText.length == 0 || product.name.indexOf(this.props.filterText) >= 0)
+            if((this.props.filterText.length == 0 || product.name.toLowerCase().indexOf(this.props.filterText.toLowerCase()) >= 0)
                     && ((this.props.inStockOnly == false) || product.stocked)) {
                 if (category == null || product.category !== category) {
                     category = product.category;
