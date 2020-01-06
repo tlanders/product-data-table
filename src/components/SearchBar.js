@@ -12,7 +12,7 @@ class SearchBar extends Component {
     }
 
     onInStockChange(evt) {
-        this.props.onInStockChange(evt.target.value);
+        this.props.onInStockChange(evt.target.checked);
     }
 
     render() {

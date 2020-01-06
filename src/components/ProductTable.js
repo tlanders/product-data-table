@@ -7,16 +7,19 @@ class ProductTable extends Component {
         const rows = [];
         let category = null;
         this.props.products.forEach((product) => {
-            if(category == null || product.category !== category) {
-                category = product.category;
-                rows.push(
-                    <ProductCategoryRow title={category}/>
-                );
-            }
+            if((this.props.filterText.length == 0 || product.name.indexOf(this.props.filterText) >= 0)
+                    && ((this.props.inStockOnly == false) || product.stocked)) {
+                if (category == null || product.category !== category) {
+                    category = product.category;
+                    rows.push(
+                        <ProductCategoryRow title={category}/>
+                    );
+                }
 
-            rows.push(
-                <ProductRow productName={product.name} price={product.price} stocked={product.stocked}/>
-            )
+                rows.push(
+                    <ProductRow productName={product.name} price={product.price} stocked={product.stocked}/>
+                )
+            }
         });
 
         return (

@@ -8,7 +8,6 @@ class FilterableProductTable extends Component {
         this.handleSearchTextChange = this.handleSearchTextChange.bind(this);
         this.handleInStockChange = this.handleInStockChange.bind(this);
         this.state = {
-            products: props.products,
             inStockOnly: false,
             searchText: ''
         };
@@ -33,7 +32,11 @@ class FilterableProductTable extends Component {
                     onSearchTextChange={this.handleSearchTextChange}
                     onInStockChange={this.handleInStockChange}
                 />
-                <ProductTable products={this.props.products}/>
+                <ProductTable
+                    products={this.props.products}
+                    filterText={this.state.searchText}
+                    inStockOnly={this.state.inStockOnly}
+                />
             </div>
         );
     }
